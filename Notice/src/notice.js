@@ -4,12 +4,11 @@ import "../resource/style.css";//导入css文件，需要添加依赖
 
 (function () {
     // 初始化
-    init_notice_box();
+    window.onload=init_notice_box;
 })();
 
 // 初始化，添加box容器
 function init_notice_box() {
-
     // 获取body
     let body = document.body;
     // 添加box
