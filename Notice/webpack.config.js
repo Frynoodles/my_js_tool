@@ -54,5 +54,5 @@ module.exports = {
         minimizer: [ // 使用什么来压缩
             new TerserPlugin(),
         ]
-    }
+    } // 我怀疑压缩会导致全局变量变名字
 }
