@@ -4,7 +4,7 @@ import "../resource/style.css";//导入css文件，需要添加依赖
 
 (function () {
     // 初始化
-    window.onload=init_notice_box;
+    window.onload = init_notice_box;
 })();
 
 // 初始化，添加box容器
@@ -25,7 +25,7 @@ window.notice = class Notice {
     element;
     timeout;
 
-    constructor(content, title = '', timeout = 5000) {
+    constructor(content, timeout = 5000, title = '') {
         this.title = title;
         this.content = content;
         this.id = 'not' + (new Date()).valueOf().toString();// 将id赋值为not+创建时的时间戳,用来识别身份
@@ -35,6 +35,7 @@ window.notice = class Notice {
         let notice = document.createElement('div');
         notice.setAttribute('class', 'notice_1');
         notice.setAttribute('id', this.id)
+        notice.style.cssText = `animation: animation114514 ${timeout / 1000}s ease-out,showup 1s ease-in-out;`;
         notice.innerHTML = `<div class="notice"><div class="notice_title">${this.title}</div><div class="notice_content">${this.content}</div></div>`
         this.element = notice;
         this.add_list()
@@ -52,3 +53,4 @@ window.notice = class Notice {
     }
 
 }
+
